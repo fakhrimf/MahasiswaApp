@@ -27,12 +27,28 @@ public class InputData extends AppCompatActivity {
         ActionBar a = getSupportActionBar();
         assert a != null;
         a.setTitle("Input Data");
-        nomor = findViewById(R.id.NomorD);
+        nomor = findViewById(R.id.Nomor);
         nama = findViewById(R.id.Nama);
         alamat = findViewById(R.id.Alamat);
         save = findViewById(R.id.btnSave);
-        datePick = findViewById(R.id.btnDateD);
-        jenkel = findViewById(R.id.spinnerJenkelD);
+        datePick = findViewById(R.id.btnDate);
+        jenkel = findViewById(R.id.spinnerJenkel);
+    }
+
+    public void initBtn() {
+        save.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                konekdb k = new konekdb(getApplicationContext());
+                Mahasiswa m = new Mahasiswa();
+                m.setNomor(nomor.getText().toString());
+                m.setNama(nama.getText().toString());
+                m.setAlamat(alamat.getText().toString());
+                m.setTgl_lahir(datePick.getText().toString());
+                m.setJenkel(jenkel.getSelectedItem().toString());
+                k.insert(m);
+            }
+        });
     }
 
     @Override
@@ -41,7 +57,7 @@ public class InputData extends AppCompatActivity {
         setContentView(R.layout.activity_input_data);
         initUI();
         jenkel.setPrompt("Pilih Jenis Kelamin");
-
+        initBtn();
         df = new SimpleDateFormat("dd-MM-yyyy", Locale.US);
         datePick.setOnClickListener(new View.OnClickListener() {
             @Override

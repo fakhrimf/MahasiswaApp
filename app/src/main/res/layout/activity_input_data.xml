@@ -20,7 +20,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/NomorD"
+            android:id="@+id/Nomor"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:drawableStart="@drawable/ic_edit_nomor_24dp"
@@ -49,7 +49,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/btnDateD"
+        android:id="@+id/btnDate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:drawableStart="@drawable/ic_date_24dp"
@@ -65,7 +65,7 @@
         app:layout_constraintTop_toBottomOf="@+id/layoutNama" />
 
     <Spinner
-        android:id="@+id/spinnerJenkelD"
+        android:id="@+id/spinnerJenkel"
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
         android:layout_marginTop="10dp"
@@ -73,7 +73,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnDateD"
+        app:layout_constraintTop_toBottomOf="@+id/btnDate"
         android:entries="@array/jenkel"/>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -86,7 +86,7 @@
         app:hintEnabled="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinnerJenkelD">
+        app:layout_constraintTop_toBottomOf="@+id/spinnerJenkel">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/Alamat"
