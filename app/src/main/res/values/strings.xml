@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">MahasiswaApp</string>
+    <string-array name="jenkel">
+        <item>Laki-laki</item>
+        <item>Perempuan</item>
+    </string-array>
 </resources>
