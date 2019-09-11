@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,13 +36,14 @@ public class konekdb extends SQLiteOpenHelper {
     public void insert(Mahasiswa m){
         SQLiteDatabase db =getWritableDatabase();
         ContentValues values=new ContentValues();
-        values.put(KEY_ID,m.getId());
+        values.put(KEY_ID,m.getNomor());
         values.put("nama",m.getNama());
         values.put("tgl_lahir",m.getTgl_lahir());
         values.put("jenkel",m.getJenkel());
         values.put("alamat",m.getAlamat());
         db.insert(TABLE_NAME,null,values);
     }
+
     public List<Mahasiswa> selectUserData(){
         ArrayList<Mahasiswa> list= new ArrayList<>();
         SQLiteDatabase db= getReadableDatabase();

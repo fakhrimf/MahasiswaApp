@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -27,6 +28,7 @@ public class Update extends AppCompatActivity {
         ActionBar a = getSupportActionBar();
         assert a != null;
         a.setTitle("Input Data");
+        a.setDisplayHomeAsUpEnabled(true);
         nomor = findViewById(R.id.Nomor);
         nomor.setEnabled(false);
         nomor.setInputType(InputType.TYPE_NULL);
@@ -37,17 +39,35 @@ public class Update extends AppCompatActivity {
         jenkel = findViewById(R.id.spinnerJenkel);
     }
 
+    @Override
+    public boolean onSupportNavigateUp(){
+        super.onBackPressed();
+        return true;
+    }
+
     public void initBtn() {
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 konekdb k = new konekdb(getApplicationContext());
                 Mahasiswa m = new Mahasiswa();
-                m.setNama(nama.getText().toString());
-                m.setAlamat(alamat.getText().toString());
-                m.setTgl_lahir(datePick.getText().toString());
-                m.setJenkel(jenkel.getSelectedItem().toString());
-                k.update(m);
+                String nomorr = nomor.getText().toString();
+                String namaa = nama.getText().toString();
+                String alamatt = alamat.getText().toString();
+                String tanggal = datePick.getText().toString();
+                String jenkell = datePick.getText().toString();
+                if (nomorr.isEmpty() || namaa.isEmpty() || alamatt.isEmpty() || tanggal.isEmpty() || jenkell.isEmpty()){
+                    Toast.makeText(getApplicationContext(),"Isi semua data terlebih dahulu", Toast.LENGTH_SHORT).show();
+                } else {
+                    m.setNomor(nomorr);
+                    m.setNama(namaa);
+                    m.setAlamat(alamatt);
+                    m.setTgl_lahir(tanggal);
+                    m.setJenkel(jenkell);
+                    k.insert(m);
+                    Update.super.onBackPressed();
+                    Toast.makeText(getApplicationContext(),"Data "+namaa+" Masuk", Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }
