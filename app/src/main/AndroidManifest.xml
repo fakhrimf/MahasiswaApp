@@ -11,7 +11,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".SplashScreen" android:theme="@style/SplashScreen">
+        <activity android:name=".DetailData"></activity>
+        <activity
+            android:name=".SplashScreen"
+            android:theme="@style/SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -19,6 +22,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".Dashboard" />
+        <activity android:name=".InputData" />
     </application>
 
 </manifest>

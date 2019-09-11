@@ -36,6 +36,7 @@ public class InputData extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_input_data);
         initUI();
+        jenkel.setPrompt("Pilih Jenis Kelamin");
 
         df = new SimpleDateFormat("dd-MM-yyyy", Locale.US);
         datePick.setOnClickListener(new View.OnClickListener() {

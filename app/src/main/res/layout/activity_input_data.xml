@@ -24,7 +24,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:drawableStart="@drawable/ic_edit_nomor_24dp"
-            android:hint="   Nomor" />
+            android:hint="Nomor" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -45,7 +45,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:drawableStart="@drawable/ic_person_24dp"
-            android:hint="   Nama" />
+            android:hint="Nama" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
@@ -74,8 +74,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnDate"
-        android:entries="@array/jenkel"
-        android:prompt="Masukkan Jenis Kelamin anda"/>
+        android:entries="@array/jenkel"/>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/layoutAlamat"
@@ -94,7 +93,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:drawableStart="@drawable/ic_alamat_black_24dp"
-            android:hint="   Alamat" />
+            android:hint="Alamat" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
