@@ -1,6 +1,7 @@
 package com.pwpb.mahasiswaapp;
 
 public class Mahasiswa {
+
     private String nama, alamat, tgl_lahir, jenkel, nomor, id;
 
     public String getNama() {

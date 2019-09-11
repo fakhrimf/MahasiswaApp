@@ -55,7 +55,7 @@ public class konekdb extends SQLiteOpenHelper {
             String tgl =c.getString(2);
             String jenkel =c.getString(3);
             String alamat =c.getString(4);
-            Mahasiswa m=new Mahasiswa();
+            Mahasiswa m = new Mahasiswa();
             m.setId(id);
             m.setNama(nama);
             m.setTgl_lahir(tgl);
