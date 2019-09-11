@@ -5,14 +5,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class DetailData extends AppCompatActivity {
+public class Update extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_detail_data);
+        setContentView(R.layout.activity_update);
         ActionBar a = getSupportActionBar();
         assert a != null;
-        a.setTitle("Detail");
+        a.setTitle("Update Data");
     }
 }

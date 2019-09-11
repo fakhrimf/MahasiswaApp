@@ -6,4 +6,64 @@
     android:layout_height="match_parent"
     tools:context=".DetailData">
 
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:src="@drawable/student"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2">
+
+        <TextView
+            android:id="@+id/tvNomor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:drawableStart="@drawable/ic_edit_nomor_24dp"
+            android:text="  Nomor : " />
+
+        <TextView
+            android:id="@+id/tvNama"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:drawableStart="@drawable/ic_person_24dp"
+            android:text="  Nama : " />
+
+        <TextView
+            android:id="@+id/tvTgl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:drawableStart="@drawable/ic_date_24dp"
+            android:text="  Tanggal Lahir : " />
+
+        <TextView
+            android:id="@+id/tvJenkel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:drawableStart="@drawable/ic_person_24dp"
+            android:text="  Jenis Kelamin : " />
+
+        <TextView
+            android:id="@+id/tvAlamat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:drawableStart="@drawable/ic_person_24dp"
+            android:text="  Alamat : " />
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

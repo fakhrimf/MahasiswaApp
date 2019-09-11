@@ -8,6 +8,7 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.text.SimpleDateFormat;
@@ -23,12 +24,15 @@ public class InputData extends AppCompatActivity {
     private Button save, datePick;
 
     private void initUI() {
-        nomor = findViewById(R.id.Nomor);
+        ActionBar a = getSupportActionBar();
+        assert a != null;
+        a.setTitle("Input Data");
+        nomor = findViewById(R.id.NomorD);
         nama = findViewById(R.id.Nama);
         alamat = findViewById(R.id.Alamat);
         save = findViewById(R.id.btnSave);
-        datePick = findViewById(R.id.btnDate);
-        jenkel = findViewById(R.id.spinnerJenkel);
+        datePick = findViewById(R.id.btnDateD);
+        jenkel = findViewById(R.id.spinnerJenkelD);
     }
 
     @Override
