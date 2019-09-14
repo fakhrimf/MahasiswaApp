@@ -19,18 +19,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="15sp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:background="@color/transparent"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:background="?selectableItemBackground"
         android:textAllCaps="false"
         android:textAlignment="textStart"
         android:text="Lihat Data" />
 
     <Button
         android:layout_width="match_parent"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:background="@color/transparent"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:background="?selectableItemBackground"
         android:textAlignment="textStart"
         android:textAllCaps="false"
         android:layout_height="wrap_content"
@@ -39,10 +39,11 @@
     <Button
         android:layout_width="match_parent"
         android:textAlignment="textStart"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
         android:textAllCaps="false"
-        android:background="@color/transparent"
+        android:layout_marginBottom="15dp"
+        android:background="?selectableItemBackground"
         android:layout_height="wrap_content"
         android:text="Hapus Data" />
 
