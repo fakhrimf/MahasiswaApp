@@ -16,6 +16,7 @@
         android:text="Pilihan" />
 
     <Button
+        android:id="@+id/btnLihatData"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="15sp"
@@ -27,6 +28,7 @@
         android:text="Lihat Data" />
 
     <Button
+        android:id="@+id/btnUpdateData"
         android:layout_width="match_parent"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
@@ -37,6 +39,7 @@
         android:text="Update Data" />
 
     <Button
+        android:id="@+id/btnHapusData"
         android:layout_width="match_parent"
         android:textAlignment="textStart"
         android:paddingLeft="20dp"

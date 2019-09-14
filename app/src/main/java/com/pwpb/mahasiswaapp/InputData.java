@@ -47,7 +47,7 @@ public class InputData extends AppCompatActivity {
                 String namaa = nama.getText().toString();
                 String alamatt = alamat.getText().toString();
                 String tanggal = datePick.getText().toString();
-                String jenkell = datePick.getText().toString();
+                String jenkell = jenkel.getSelectedItem().toString();
                 if (nomorr.isEmpty() || namaa.isEmpty() || alamatt.isEmpty() || tanggal.isEmpty() || jenkell.isEmpty()){
                     Toast.makeText(getApplicationContext(),"Isi semua data terlebih dahulu", Toast.LENGTH_SHORT).show();
                 } else {
@@ -75,7 +75,6 @@ public class InputData extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_input_data);
         initUI();
-        jenkel.setPrompt("Pilih Jenis Kelamin");
         initBtn();
         df = new SimpleDateFormat("dd-MM-yyyy", Locale.US);
         datePick.setOnClickListener(new View.OnClickListener() {

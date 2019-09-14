@@ -11,10 +11,14 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".DetailMahasiswa"
+            android:parentActivityName=".DataMahasiswa" />
+
         <activity
             android:name=".DetailData"
             android:screenOrientation="portrait" />
-        <activity android:name=".DataMahasiswa"
+        <activity
+            android:name=".DataMahasiswa"
             android:parentActivityName=".Dashboard" />
         <activity
             android:name=".SplashScreen"
@@ -32,6 +36,7 @@
         <activity
             android:name=".InputData"
             android:screenOrientation="portrait" />
+        <activity android:name=".Update" />
     </application>
 
 </manifest>

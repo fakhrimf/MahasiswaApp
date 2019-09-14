@@ -18,7 +18,7 @@ public class SplashScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
 
-        ConstraintLayout overlay = (ConstraintLayout) findViewById(R.id.overlay);
+        ConstraintLayout overlay = findViewById(R.id.overlay);
 
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
@@ -30,8 +30,8 @@ public class SplashScreen extends AppCompatActivity {
             @Override
             public void run() {
                 startActivity(new Intent(SplashScreen.this, Dashboard.class));
+                finish();
             }
         }, JANGKA_WAKTU);
-
     }
 }
