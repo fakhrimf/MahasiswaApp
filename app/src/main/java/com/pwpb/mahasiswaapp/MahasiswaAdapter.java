@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
@@ -24,7 +25,7 @@ public class MahasiswaAdapter extends RecyclerView.Adapter<MahasiswaAdapter.Maha
     }
 
     public interface OnUserClickListener{
-        void onUserClick(Mahasiswa currentPerson, String action);
+        void onUserClick(String ItemId);
     }
 
     @NonNull
@@ -40,6 +41,13 @@ public class MahasiswaAdapter extends RecyclerView.Adapter<MahasiswaAdapter.Maha
     public void onBindViewHolder(@NonNull MahasiswaViewHolder holder, int position) {
         final Mahasiswa mahasiswaData  = mahasiswaList.get(position);
         holder.txt_nama.setText(mahasiswaData.getNama());
+
+        holder.constraintLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                listener.onUserClick(mahasiswaData.getId());
+            }
+        });
     }
 
     @Override
@@ -50,11 +58,13 @@ public class MahasiswaAdapter extends RecyclerView.Adapter<MahasiswaAdapter.Maha
     public class MahasiswaViewHolder extends RecyclerView.ViewHolder {
 
         TextView txt_nama;
+        ConstraintLayout constraintLayout;
 
         public MahasiswaViewHolder(@NonNull View itemView) {
 
             super(itemView);
             txt_nama = itemView.findViewById(R.id.txt_nama);
+            constraintLayout = itemView.findViewById(R.id.constraintParent);
 
         }
     }

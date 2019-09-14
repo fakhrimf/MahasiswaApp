@@ -9,9 +9,11 @@ import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -36,6 +38,7 @@ public class DataMahasiswa extends AppCompatActivity implements MahasiswaAdapter
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_data_mahasiswa);
 
+        getSupportActionBar().setTitle("Data Mahasiswa");
         getSupportActionBar().setDefaultDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -75,8 +78,9 @@ public class DataMahasiswa extends AppCompatActivity implements MahasiswaAdapter
         exampleDialog.show(getSupportFragmentManager(), "Dialog Ketentuan");
     }
 
-    @Override
-    public void onUserClick(Mahasiswa currentPerson, String action) {
 
+    @Override
+    public void onUserClick(String ItemId) {
+        Toast.makeText(getApplicationContext(), ItemId + " Di klik", Toast.LENGTH_LONG).show();
     }
 }
