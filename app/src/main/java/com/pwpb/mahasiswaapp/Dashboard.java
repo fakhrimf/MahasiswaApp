@@ -29,6 +29,14 @@ public class Dashboard extends AppCompatActivity {
                 startActivity(i);
             }
         });
+
+        lihat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), DataMahasiswa.class));
+            }
+        });
+
     }
 
     @Override
