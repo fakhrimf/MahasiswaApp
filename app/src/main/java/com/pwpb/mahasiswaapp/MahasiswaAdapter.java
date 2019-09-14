@@ -1,12 +1,9 @@
 package com.pwpb.mahasiswaapp;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -19,6 +16,12 @@ public class MahasiswaAdapter extends RecyclerView.Adapter<MahasiswaAdapter.Maha
     Context context;
     OnUserClickListener listener;
     List<Mahasiswa> mahasiswaList;
+
+    public MahasiswaAdapter(Context context, List<Mahasiswa> mahasiswaList,OnUserClickListener listener) {
+        this.context=context;
+        this.mahasiswaList=mahasiswaList;
+        this.listener=listener;
+    }
 
     public interface OnUserClickListener{
         void onUserClick(Mahasiswa currentPerson, String action);
@@ -51,7 +54,7 @@ public class MahasiswaAdapter extends RecyclerView.Adapter<MahasiswaAdapter.Maha
         public MahasiswaViewHolder(@NonNull View itemView) {
 
             super(itemView);
-            txt_nama = (TextView) itemView.findViewById(R.id.txt_nama);
+            txt_nama = itemView.findViewById(R.id.txt_nama);
 
         }
     }

@@ -65,6 +65,7 @@ public class konekdb extends SQLiteOpenHelper {
         }
         return list;
     }
+
     public void delete(String id){
         SQLiteDatabase db =getWritableDatabase();
         String whereClause=KEY_ID+"='"+id+"'";
