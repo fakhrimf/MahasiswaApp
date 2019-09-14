@@ -3,6 +3,7 @@ package com.pwpb.mahasiswaapp;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -22,6 +23,7 @@ public class DataMahasiswa extends AppCompatActivity implements MahasiswaAdapter
 
     Button inputData;
     RecyclerView recyclerView;
+    SwipeRefreshLayout swipeRefreshLayout;
     Context context;
     Button btnLihat;
     Context con;
@@ -32,12 +34,14 @@ public class DataMahasiswa extends AppCompatActivity implements MahasiswaAdapter
 
     }
 
-    @SuppressLint("RestrictedApi")
+    @SuppressLint({"RestrictedApi", "ResourceAsColor"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_data_mahasiswa);
         btnLihat = findViewById(R.id.btnLihat);
+        swipeRefreshLayout = findViewById(R.id.swipeRefreshLayout);
+        swipeRefreshLayout.setColorSchemeColors(R.color.colorPrimary, R.color.colorAccent);
         con = getApplicationContext();
 
         getSupportActionBar().setTitle("Data Mahasiswa");
@@ -57,6 +61,26 @@ public class DataMahasiswa extends AppCompatActivity implements MahasiswaAdapter
                 startActivity(i);
             }
         });
+
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+
+                        swipeRefreshLayout.setRefreshing(false);
+
+                        setupRecyclerView();
+
+                    }
+                }, 2000);
+
+            }
+        });
+
+
     }
 
     private void setupRecyclerView() {
