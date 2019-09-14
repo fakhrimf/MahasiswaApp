@@ -30,7 +30,6 @@ public class MahasiswaAdapter extends RecyclerView.Adapter<MahasiswaAdapter.Maha
     @NonNull
     @Override
     public MahasiswaViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-
         View view =  LayoutInflater.from(parent.getContext()).inflate(R.layout.format_data_mahasiswa_recycler,parent,false);
         MahasiswaViewHolder mahasiswaViewHolder = new MahasiswaViewHolder(view);
         return mahasiswaViewHolder;
@@ -40,6 +39,12 @@ public class MahasiswaAdapter extends RecyclerView.Adapter<MahasiswaAdapter.Maha
     public void onBindViewHolder(@NonNull MahasiswaViewHolder holder, int position) {
         final Mahasiswa mahasiswaData  = mahasiswaList.get(position);
         holder.txt_nama.setText(mahasiswaData.getNama());
+        holder.txt_nama.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
     }
 
     @Override
